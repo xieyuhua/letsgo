@@ -1,0 +1,7 @@
+cache: certs
+
+email: ""
+
+proxies: 
+  jiaoyuhua.cn: http://127.0.0.1:8002
+  www.jiaoyuhua.cn: http://127.0.0.1:8003,http://127.0.0.1:8003
