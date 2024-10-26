@@ -58,3 +58,21 @@ proxies:
 1. 项目参考 [LetsProxy]
 2. 性能未测试，基本满足日常需要（专业用户请移步nginx）
 
+## acme 证书生成 CN=ZeroSSL ECC Domain Secure Site CA,O=ZeroSSL,C=AT
+```
+git clone --depth 1 https://github.com/acmesh-official/acme.sh.git
+cd acme.sh
+./acme.sh --install -m my@example.com
+./acme.sh --issue -d www.mydomain.com --webroot /home/wwwroot/mydomain.com/ --renew --force
+```
+
+## lego 证书生成 CN=E5,O=Let's Encrypt,C=US
+```
+./lego --accept-tos --email my@example.com--http --http.webroot /www/wwwroot/web.mydomain.cn  --domains web.mydomain.cn run
+./lego --email my@example.com --domains="web.mydomain.cn" --http renew
+```
+
+## 宝塔 证书生成 CN=R10,O=Let's Encrypt,C=US
+
+
+
