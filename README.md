@@ -58,6 +58,8 @@ proxies:
 1. 项目参考 [LetsProxy]
 2. 性能未测试，基本满足日常需要（专业用户请移步nginx）
 
+### ACME协议的实现需要CA和客户端双方的支持，目前已经有很多主流的CA和客户端支持ACME协议，例如Let’s Encrypt、Certbot、ACME.sh等。
+
 ## acme 证书生成 CN=ZeroSSL ECC Domain Secure Site CA,O=ZeroSSL,C=AT
 ```
 git clone --depth 1 https://github.com/acmesh-official/acme.sh.git
@@ -66,8 +68,9 @@ cd acme.sh
 ./acme.sh --issue -d www.mydomain.com --webroot /home/wwwroot/mydomain.com/ --renew --force
 ```
 
-## lego 证书生成 CN=E5,O=Let's Encrypt,C=US
+## lego 证书生成 CN=E5,O=Let's Encrypt,C=US 
 ```
+泛域名证书只能通过DNS验证
 ./lego --accept-tos --email my@example.com--http --http.webroot /www/wwwroot/web.mydomain.cn  --domains web.mydomain.cn run
 ./lego --email my@example.com --domains="web.mydomain.cn" --http renew
 ```
